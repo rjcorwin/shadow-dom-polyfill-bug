@@ -1,0 +1,32 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../fogey-foo/fogey-foo.html">
+
+<dom-module id="fogey-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello</h2>
+    <div id="content"></div>
+    <slot></slot>
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class FogeyApp extends Polymer.Element {
+      static get is() { return 'fogey-app'; }
+      connectedCallback() {
+        super.connectedCallback()
+        this.$.content.innerHTML = 'In content region: <fogey-foo></fogey-foo>'
+        this.innerHTML = 'In slot: <fogey-foo></fogey-foo>'
+      }
+    }
+
+    window.customElements.define(FogeyApp.is, FogeyApp);
+  </script>
+</dom-module>

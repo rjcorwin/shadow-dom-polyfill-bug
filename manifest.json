@@ -1,0 +1,6 @@
+{
+  "name": "fogey",
+  "short_name": "fogey",
+  "start_url": "/",
+  "display": "standalone"
+}
